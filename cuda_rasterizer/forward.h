@@ -62,7 +62,7 @@ namespace FORWARD
 		const float* bg_color,
 		float* out_color,
 		float* out_depth,
-        uint32_t* out_surface_id);
+        int* out_surface_id);
 }
 
 

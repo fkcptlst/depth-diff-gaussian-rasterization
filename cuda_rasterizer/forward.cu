@@ -273,7 +273,7 @@ renderCUDA(
 	const float* __restrict__ bg_color,
 	float* __restrict__ out_color,
 	float* __restrict__ out_depth,
-	uint32_t* __restrict__ out_surface_id)
+	int* __restrict__ out_surface_id)
 {
 	// Identify current tile and associated min/max pixel range.
 	auto block = cg::this_thread_block();
@@ -306,7 +306,7 @@ renderCUDA(
 	float C[CHANNELS] = { 0 };
 	float D = { 0 };
 
-	uint32_t surface_id = 0;
+	int surface_id = 0;
 
 	// Iterate over batches until all done or range is complete
 	for (int i = 0; i < rounds; i++, toDo -= BLOCK_SIZE)
@@ -401,7 +401,7 @@ void FORWARD::render(
 	const float* bg_color,
 	float* out_color,
 	float* out_depth,
-	uint32_t* out_surface_id)
+	int* out_surface_id)
 {
 	renderCUDA<NUM_CHANNELS> << <grid, block >> > (
 		ranges,
