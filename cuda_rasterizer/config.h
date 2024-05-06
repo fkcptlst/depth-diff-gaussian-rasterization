@@ -16,4 +16,7 @@
 #define BLOCK_X 16
 #define BLOCK_Y 16
 
+#define SURFACE_ALPHA_MAX 0.99f
+#define SURFACE_ALPHA_MIN 0.01f
+
 #endif
