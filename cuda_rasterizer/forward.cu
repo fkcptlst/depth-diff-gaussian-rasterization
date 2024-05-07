@@ -357,7 +357,7 @@ renderCUDA(
 			}
 
             // z-buffer
-            if (surface_id == 0 && alpha > SURFACE_ALPHA_MIN && alpha < SURFACE_ALPHA_MIN){
+            if (surface_id == 0 && alpha > SURFACE_ALPHA_MIN && alpha < SURFACE_ALPHA_MAX){
                 surface_id = collected_id[j];  // record the id of the surface gaussian
             }
 
